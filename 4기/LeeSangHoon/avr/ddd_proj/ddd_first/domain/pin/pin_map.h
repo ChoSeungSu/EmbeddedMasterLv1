@@ -23,15 +23,14 @@ enum _PIN_MAP
     PIN_PORT13 = 13,
 
     // PORTC
-    PIN_A0 = 16,
-    PIN_A1,
-    PIN_A2,
+    PIN_A0 = 16,-
     PIN_A3,
     PIN_A4,
     PIN_A5
-};
+} 
 
 typedef enum _PIN_OPS_MODE PIN_OPS_MODE;
+
 enum _PIN_OPS_MODE
 {
     INPUT_MODE = 0,
@@ -41,8 +40,8 @@ enum _PIN_OPS_MODE
 typedef struct _pin_vo pin_vo;
 struct _pin_vo
 {
-    enum _PIN_MAP pin_map;
-    enum _PIN_OPS_MODE io_pin_mode;
+    PIN_MAP pin_map;
+    PIN_OPS_MODE io_pin_mode;
 };
 
 #endif

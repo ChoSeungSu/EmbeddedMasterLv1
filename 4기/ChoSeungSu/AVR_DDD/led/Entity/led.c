@@ -1,13 +1,13 @@
 #include "led.h"
 
-// led_object * init_led(void)
-// {
-//     static led_object led_obj;
-    
-//     return & led_obj;
-// }
-
-void blink_led(led_object * led_obj_ptr)
+void led_entity_init(PIN_MAP pin_map, LED_STATUS status)
 {
-    led_obj_ptr->status = ~(led_obj_ptr->status);
+    led.pin = pin_map;
+    led.status = status;
+} 
+
+void set_led_status (LED_STATUS status)
+{
+    led.status = status;
 }
+

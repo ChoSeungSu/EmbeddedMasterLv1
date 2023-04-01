@@ -1,6 +1,15 @@
 #include "avr.h"
 
-void set_pin_data(pin led_pin, uint8_t bit_data)
+void pin_direct (led_object led_pin)
 {
-    *(led_pin.direction) = bit_data; 
+    PIN_MAP pin_map = led_pin.pin;
+
+    DDRB = 1 << pin_map;
+
+void pin_set(led_object led_pin)
+{
+    LED_STATUS status = led_pin.status;
+    PIN_MAP pin_map = led_pin.pin;
+
+    PORTB = status << pin_map; 
 }
